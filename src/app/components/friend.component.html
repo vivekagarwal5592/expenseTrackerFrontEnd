@@ -1,0 +1,39 @@
+
+<header></header>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-5">
+
+      <form>
+        <div class="form-group">
+          <label for="name">Name </label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"  [(ngModel)]="friend.name" />
+
+        </div>
+
+        <div class="form-group">
+          <label for="description">Email</label>
+          <input type="text"  name="email" class="form-control" id="email" placeholder="Email"  [(ngModel)]="friend.email" />
+        </div>
+
+        <button (click)="addFriend()" class="btn btn-primary">Add Friend</button>
+      </form>
+    </div>
+
+    <div class="col-md-7">
+      <div class=row>
+        <div class="col-md-12 mt-3" *ngFor="let e of friendlist">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">  <span><label>Name: </label>{{e.name}} </span></h5>
+              <h5 class="card-title">  <span><label>Email: </label>{{e.email}} </span></h5>
+              <p class="card-text">{{e.description}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

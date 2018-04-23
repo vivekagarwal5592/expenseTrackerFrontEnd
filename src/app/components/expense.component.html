@@ -1,0 +1,48 @@
+
+<header></header>
+<div class="container">
+
+
+
+<div class="row">
+<div class="col-md-5">
+
+<form>
+  <div class="form-group">
+    <label for="name">Name </label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"  [(ngModel)]="expense.name" />
+
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text"  name="description" class="form-control" id="description" placeholder="Description"  [(ngModel)]="expense.description" />
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text"  name="price" class="form-control" id="price" placeholder="Price"  [(ngModel)]="expense.price" />
+  </div>
+
+  <button (click)="addExpense()" class="btn btn-primary">Add Expense</button>
+</form>
+</div>
+
+<div class="col-md-7">
+<div class=row>
+<div class="col-md-12 mt-3" *ngFor="let e of expenses">
+  <div class="card" >
+    <div class="card-body">
+    <h5 class="card-title">  <span><label>Name: </label>{{e.name}} </span></h5>
+      <h5 class="card-title">  <span><label>Price: </label>{{e.price | currency}} </span></h5>
+      <p class="card-text">{{e.description}} </p>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
